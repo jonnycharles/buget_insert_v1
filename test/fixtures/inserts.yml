@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  hud_id: MyString
+  month_hud_expiration: MyString
+  day_hud_expiration: MyString
+  year_hud_expiration: MyString
+  va_id: MyString
+  month_va_approval: MyString
+  day_va_approval: MyString
+  year_va_approval: MyString
+  hud_approval: false
+
+two:
+  name: MyString
+  type: 
+  hud_id: MyString
+  month_hud_expiration: MyString
+  day_hud_expiration: MyString
+  year_hud_expiration: MyString
+  va_id: MyString
+  month_va_approval: MyString
+  day_va_approval: MyString
+  year_va_approval: MyString
+  hud_approval: false

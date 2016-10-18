@@ -1,0 +1,2 @@
+class Insert < ApplicationRecord
+end
