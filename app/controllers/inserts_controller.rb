@@ -6,8 +6,11 @@ class InsertsController < ApplicationController
 	def create
 		@insert = Insert.new(insert_params)
 
-		@insert.save
-		redirect_to @insert
+		if @insert.save
+			redirect_to @insert
+		else
+			render 'new'
+		end
 	end
 
 	def show

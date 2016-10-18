@@ -3,7 +3,7 @@
 		<h1>Condo Approvals, LLC</h1>
 	</div>
 	<div>
-		<small>Disclaimer: Condo Approvals does not endorse the information shown below.  For more information about your association, please email us at jone@condoapprovalsllc.com</small>
+		<small>Disclaimer: Condo Approvals does not endorse the information shown below.  For more information about your association, please email us at condoapprovals@condoapprovalsllc.com</small>
 	</div>
 	<% if (@insert.hoa_classification == 'Condo') && (@insert.hud_id != 'None')%>
 		<div>
@@ -47,7 +47,7 @@
 		<p><h4>As of now, certification by Federal Housing Administration only lasts for <b>two years</b>.</h4></p>
 	<% end %>
 	<% if (@insert.hoa_classification == 'Condo') && (@insert.va_id != 'None')%>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
 		<h4><b>VA ID: </b><%= @insert.va_id %></h4><br>
 		<br><br><br><br>
@@ -57,7 +57,7 @@
 		<br><br><br>
 		<p><h4>As of now, certification by the federal Department of Veterans Affairs <b>does not expire</b>.</h4></p>
 	<% elsif (@insert.hoa_classification == 'Condo') && (@insert.va_id == 'None')%>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
 		<h4><b>VA ID: </b>None</h4><br>
 		<br><br><br><br>
@@ -67,7 +67,7 @@
 		<br><br><br>
 		<p><h4>As of now, certification by the federal Department of Veterans Affairs <b>does not expire</b>.</h4></p>
 	<% else%>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
 		<h4><b>VA ID: </b>None</h4><br>
 		<br><br><br><br>
