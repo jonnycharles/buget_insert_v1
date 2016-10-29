@@ -35,7 +35,7 @@ class InsertPdf < Prawn::Document
 		insert_footer
 		move_down 100
 		insert_condo_approvals
-		move_down 10
+		move_down 20
 		first_question
 		move_down 10
 		first_answer
@@ -55,7 +55,8 @@ class InsertPdf < Prawn::Document
 		fifth_question
 		move_down 10
 		first_answer
-
+		move_down 100
+		insert_footer
 
 	end
 
@@ -176,7 +177,7 @@ class InsertPdf < Prawn::Document
 
 	#expiration date logic
 	def expiration_date_logic
-		if (defined?(@insert.month_hud_expiration)).nil?
+		if (@insert.month_hud_expiration != nil)
 				text "Expiration Date: #{@insert.month_hud_expiration}/#{@insert.day_hud_expiration}/#{@insert.year_hud_expiration}", size: 13
 			 else 
 				text "Expiration Date: None", size: 13
@@ -185,7 +186,7 @@ class InsertPdf < Prawn::Document
 
 	#hud id logic
 	def hud_id_logic
-		if (defined?(@insert.hud_id)).nil?
+		if (@insert.hud_id != nil)
 			text "HUD ID Number: #{@insert.hud_id}", size: 13
 		else
 			text "HUD ID Number: None", size: 13
@@ -196,7 +197,7 @@ class InsertPdf < Prawn::Document
 	def va_id_logic
 		if "#{@insert.va_id}".downcase == "none"
 			text "VA ID Number: None", size: 13
-		elsif (defined?(@insert.va_id)).nil?
+		elsif (@insert.va_id != nil)
 			text "VA ID Number: #{@insert.va_id}", size: 13
 		else
 			text "VA ID Number: None", size: 13
