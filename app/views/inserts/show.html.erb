@@ -1,89 +1,9 @@
 <div class="container">
-	<div class="page-header">
-		<h1>Condo Approvals, LLC</h1>
-	</div>
-	<div>
-		<small>Disclaimer: Condo Approvals does not endorse the information shown below.  For more information about your association, please email us at condoapprovals@condoapprovalsllc.com</small>
-	</div>
-	<% if (@insert.hoa_classification == 'Condo') && (@insert.hud_id != 'None')%>
-		<div>
-			<!-- Information about association -->
-			<br><br><br>
-			<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
-			<h4><b>HUD ID: </b><%= @insert.hud_id %></h4><br>
-			<h4><b>Expiration Date: </b><%= @insert.month_hud_expiration %>/<%= @insert.day_hud_expiration %>/<%= @insert.year_hud_expiration %></h4><br></p>
-			<br><br>
-			<!-- /Information about Association -->
-			<p><h4>Certification by the Federal Housing Administration may provide benefits to members of an association, including an improvement in an owner’s ability to refinance a mortgage or obtain secondary financing and an increase in the pool of potential buyers of the separate interest.</h4></p>
-			<% if @insert.approved == '1' %>
-				<br><br><br><p><h4>This common interest development <b>is</b> a condominium project.  The association of this common interest development <b>is</b> certified by the Federal Housing Administration.</h4></p>
-				<br><p><h4>As of now, certification by Federal Housing Administration only lasts for <b>two years</b>.</h4></p>
-			<% else %>
-				<br><br><br><p><h4>This common interest development <b>is</b> a condominium project.  The association of this common interest development <b>is not</b> certified by the Federal Housing Administration.</h4></p>
-				<br><br><br><p><h4>As of now, certification by Federal Housing Administration only lasts for <b>two years</b>.</h4></p>
-		</div>
-		<% end %>
-	<% elsif (@insert.hoa_classification == 'Condo') && (@insert.hud_id == 'None')%>
-		<br><br><br>
-		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
-		<h4><b>HUD ID: </b>None</h4><br>
-		<h4><b>Expiration Date: </b>None</h4><br></p>
-		<br><br><br>
-		<p><h4>Certification by the Federal Housing Administration may provide benefits to members of an association, including an improvement in an owner’s ability to refinance a mortgage or obtain secondary financing and an increase in the pool of potential buyers of the separate interest.</h4></p>
-		<br><br><br>
-		<p><h4>This common interest development <b>is</b> a condominium project.  The association of this common interest development <b>is not</b> certified by the Federal Housing Administration.</h4></p>
-		<br><br>
-		<p><h4>As of now, certification by Federal Housing Administration only lasts for <b>two years</b>.</h4></p>
-	<% else %>
-		<br><br><br>
-		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
-		<h4><b>HUD ID: </b>None</h4><br>
-		<h4><b>Expiration Date: </b>None</h4><br></p>
-		<br><br><br>
-		<p><h4>Certification by the Federal Housing Administration may provide benefits to members of an association, including an improvement in an owner’s ability to refinance a mortgage or obtain secondary financing and an increase in the pool of potential buyers of the separate interest.</h4></p>
-		<br><br><br>
-		<p><h4>This common interest development <b>is not</b> a condominium project.  The association of this common interest development <b>is not</b> certified by the Federal Housing Administration.</h4></p>
-		<br><br>
-		<p><h4>As of now, certification by Federal Housing Administration only lasts for <b>two years</b>.</h4></p>
-	<% end %>
-	<% if (@insert.hoa_classification == 'Condo') && (@insert.va_id != 'None')%>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
-		<h4><b>VA ID: </b><%= @insert.va_id %></h4><br>
-		<br><br><br><br>
-		<p><h4>Certification by the federal Department of Veterans Affairs may provide benefits to members of an association, including an improvement in an owner’s ability to refinance a mortgage or obtain secondary financing and an increase in the pool of potential buyers of the separate interest.</h4></p>
-		<br><br><br>
-		<p><h4>This common interest development <b>is</b> a condominium project. The association of this common interest development <b>is</b> certified by the federal Department of Veterans Affairs.</h4></p>
-		<br><br><br>
-		<p><h4>As of now, certification by the federal Department of Veterans Affairs <b>does not expire</b>.</h4></p>
-	<% elsif (@insert.hoa_classification == 'Condo') && (@insert.va_id == 'None')%>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
-		<h4><b>VA ID: </b>None</h4><br>
-		<br><br><br><br>
-		<p><h4>Certification by the federal Department of Veterans Affairs may provide benefits to members of an association, including an improvement in an owner’s ability to refinance a mortgage or obtain secondary financing and an increase in the pool of potential buyers of the separate interest.</h4></p>
-		<br><br><br>
-		<p><h4>This common interest development <b>is</b> a condominium project. The association of this common interest development <b>is not</b> certified by the federal Department of Veterans Affairs.</h4></p>
-		<br><br><br>
-		<p><h4>As of now, certification by the federal Department of Veterans Affairs <b>does not expire</b>.</h4></p>
-	<% else%>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		<p><h3><b>Name of Association: </b><%= @insert.name %></h3><br>
-		<h4><b>VA ID: </b>None</h4><br>
-		<br><br><br><br>
-		<p><h4>Certification by the federal Department of Veterans Affairs may provide benefits to members of an association, including an improvement in an owner’s ability to refinance a mortgage or obtain secondary financing and an increase in the pool of potential buyers of the separate interest.</h4></p>
-		<br><br><br>
-		<p><h4>This common interest development <b>is not</b> a condominium project. The association of this common interest development <b>is not</b> certified by the federal Department of Veterans Affairs.</h4></p>
-		<br><br><br>
-		<p><h4>As of now, certification by the federal Department of Veterans Affairs <b>does not expire</b>.</h4></p>
-	<% end %>
 	<%= link_to "View Your AB 596", insert_path(@insert, format: "pdf") %>
-	<br><br><br><br>
+	
 	<hr class="m-y-4">
             <div class="col-md-5 text-md-right">
               <small>Condo Approvals, LLC <br> Phone Number: (310) 896-2377</small>
             </div>
           </div>
-
-
 </div>

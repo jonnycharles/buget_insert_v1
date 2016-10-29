@@ -19,7 +19,7 @@ class InsertsController < ApplicationController
 			format.html
 			format.pdf do
 				pdf = InsertPdf.new(@insert)
-				send_data pdf.render, filename: "#{@insert.name}_AB_596",
+				send_data pdf.render, filename: '#{@insert.name}_AB_596',
 										type: "application/pdf",
 										disposition: "inline"
 			end

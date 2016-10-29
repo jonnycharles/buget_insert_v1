@@ -118,7 +118,7 @@ class InsertPdf < Prawn::Document
 	#second pargraph logic
 	def second_paragraph_third_page
 		if ("#{@insert.hoa_classification}" == "Condo") && ("#{@insert.va_id}.downcase" != "none")
-			text "This common interest development IS a condominium project. The association of this common interest development IS NOT certified by the federal Department of Veterans Affairs.", size: 13
+			text "This common interest development IS a condominium project. The association of this common interest development IS certified by the federal Department of Veterans Affairs.", size: 13
 		elsif ("#{@insert.hoa_classification}" == "Condo") && ("#{@insert.va_id}.downcase" == "none")
 			text "This common interest development IS a condominium project. The association of this common interest development IS NOT certified by the federal Department of Veterans Affairs.
 ", size: 13
