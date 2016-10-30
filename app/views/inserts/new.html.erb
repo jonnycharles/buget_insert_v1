@@ -1,45 +1,54 @@
-<div class="container jumbotron">
-  <h1 class="display-3">Create Budget Inserts</h1>
-  <p class="lead">Fill out this form to generate budget inserts that satisfy California Assembly Bill No. 596.</p>
-  <hr class="m-y-2">
-  <p>In order to find out your status for VA and FHA, click on the button below and follow the steps.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="http://www.condoprescreen.com" role="button">Check VA and FHA</a>
-  </p>
+<div class="container-fluid">
+	<div class="jumbotron">
+	  <h1 class="display-3 text-center">Create Budget Inserts</h1>
+	  <p class="lead text-center">Fill out this form to generate budget inserts that satisfy California Assembly Bill No. 596.</p>
+	  <hr class="m-y-2 text-center">
+	  <p class="text-center">In order to find out your status for VA and FHA, click on the button below and follow the steps.</p>
+	  <p class="lead text-center">
+	    <a class="btn btn-primary btn-lg" href="http://www.condoprescreen.com" role="button">Check VA and FHA</a>
+	  </p>
+	</div>
 </div>
 <%= bootstrap_form_for :insert, url: inserts_path do |f| %>
 	<div class="container bg-info">
-		<div class="field">
-			<h3>Name of Association</h3>
-			<%= f.text_field :name, hide_label: true %>
-		</div>
-		<div class="field">
-			<b>Please Write Condo for a Condominium, Pud for a Planned Unit Development, or Site for a Site Condominium</b>
-			<%= f.select :hoa_classification, ["Condo", "Pud", "Site"], :prompt => 'Select One' %>
-		</div>
-		<div class="field">
-			<b>Is Your Association FHA-Approved?</b>
-			<%= f.check_box :approved %>
-		</div>
-		<div class="field">
-			<b>What is HUD-assigned id to your association?  It should begin with the letter 'S'.  If you do not have a HUD-assigned id, write <mark>None</mark>. You do not need to fill this in if you are a Site Condominium or a PUD.</b> <br>
-			<%= f.text_field :hud_id, hide_label: true, :placeholder => "Example: S012345" %>
-		</div>
-		<div class="field">
-			<b>What is your date of expiration as assigned by HUD?  You do not need to fill this in if you are a Site Condominium or a PUD.</b> <br>
-			<%= f.text_field :month_hud_expiration, hide_label: true, :placeholder => "mm" %>
-			<%= f.text_field :day_hud_expiration, hide_label: true, :placeholder => "dd" %>
-			<%= f.text_field :year_hud_expiration, hide_label: true, :placeholder => "yyyy" %>
-		</div>
-		<div class="p-x-3"> 
-			<b>What is VA-assigned id to your association?  If you do not have a VA number, write <mark>None</mark>.</b>
 			<div class="field">
-				<%= f.text_field :va_id, hide_label: true, :placeholder => "Example: 001234" %>
+				<h3>Name of Association</h3>
+				<%= f.text_field :name, hide_label: true %>
 			</div>
-		</div>
-		<div class="field d-block p-a-3">
-			<%= f.submit "Create", class: "btn btn-primary" %>
-		</div>
+			<div class="field">
+				<b>Please Write Condo for a Condominium, Pud for a Planned Unit Development, or Site for a Site Condominium</b>
+				<%= f.select :hoa_classification, ["Condo", "Pud", "Site"], :prompt => 'Select One' %>
+			</div>
+			<div class="field">
+				<b>Is Your Association FHA-Approved?</b>
+				<%= f.check_box :approved %>
+			</div>
+			<div class="field">
+				<b>What is HUD-assigned id to your association?  It should begin with the letter 'S'.  If you do not have a HUD-assigned id, write None. You do not need to fill this in if you are a Site Condominium or a PUD.</b> <br>
+				<%= f.text_field :hud_id, hide_label: true, :placeholder => "Example: S012345" %>
+			</div>
+			<div class="field">
+				<b>What is your date of expiration as assigned by HUD?  You do not need to fill this in if you are a Site Condominium or a PUD.</b> <br>
+					<div>
+						<%= f.text_field :month_hud_expiration, hide_label: true, :placeholder => "mm" %>
+					<div>
+					</div>
+						<%= f.text_field :day_hud_expiration, hide_label: true, :placeholder => "dd" %>
+					</div>
+					<div>
+					<%= f.text_field :year_hud_expiration, hide_label: true, :placeholder => "yyyy" %>
+					</div>
+			</div>
+			<br>
+			<div class="p-x-3"> 
+				<b>What is VA-assigned id to your association?  If you do not have a VA number, write None.</b>
+				<div class="field">
+					<%= f.text_field :va_id, hide_label: true, :placeholder => "Example: 001234" %>
+				</div>
+			</div>
+			<div class="field d-block p-a-3">
+				<%= f.submit "Create", class: "btn btn-primary" %>
+			</div>
 	</div>
 	<hr class="m-y-4">
             <div class="col-md-5 text-md-right">
