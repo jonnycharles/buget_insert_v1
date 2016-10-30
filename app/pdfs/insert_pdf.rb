@@ -176,7 +176,7 @@ class InsertPdf < Prawn::Document
 
 	#hud id logic
 	def hud_id_logic
-		if ("#{@insert.hud_id}" == "") || ("#{@insert.hud_id}".downcase == "none")
+		if ("#{@insert.hud_id}" == "") || ("#{@insert.hud_id}".downcase == "none") || ("#{@insert.hoa_classification}" != "Condo")
 			text "FHA ID: None", size: 12, style: :bold  
 		else	
 			text "FHA ID: #{@insert.hud_id}", size: 12, style: :bold
